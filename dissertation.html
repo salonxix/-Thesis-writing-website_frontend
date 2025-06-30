@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Scholar</title>
+    <link rel="stylesheet" type="text/css" href="stylee.css"> 
+    <link rel="stylesheet" href="footer.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+body {  
+        font-family:'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: #333;
+        transition: background-color 0.5s; /* added transition effect */
+        z-index:1;
+    }
+        .container, .header, .content {
+            position: relative;
+            z-index: 1; /* Lower z-index, same for container and its contents */
+}
+
+
+        .options {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s; /* added transition effect */
+        }
+        .options.show {
+            display: block;
+            opacity: 1;
+        }
+        .content {
+            margin-top:10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #f48020;
+            text-align: center;
+        }
+        .content p {
+            margin: 1em 0;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-style: italic;
+        }
+
+      @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        h1 {
+            animation: slideIn 1s ease-out;
+            color: #333;
+        }
+       h2 {
+         animation: slideIn 1s ease-out;
+            color: #333;
+      }
+        /* Styles for the social media sidebar */
+        .social-icons {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index:9999;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .youtube { background-color: #ff0000; }
+        .instagram { background-color: #c32aa3; }
+        .linkedin { background-color: #0077b5; }
+        .pinterest { background-color: #bd081c; }
+.nav-logo-container {
+    background-color: #1A1A6B; /* Replace with your desired background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index:9000;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav a, .nav .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.nav a:hover, .nav .dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.1); 
+    z-index: 9999;/* Slight highlight on hover */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 9999
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    z-index: 9999;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    z-index: 9999;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 9999;
+}
+
+
+.header-logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    max-height: 80px; /* Increased from 50px to 80px. Adjust this value as needed */
+    width: auto;
+}
+
+.category-buttons {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 0px;
+        }
+        .category-button {
+            width: 45%;
+            height: 50px;
+            background-color:#1A1A6B;
+            color: white;
+            font-size: 16px;
+            
+            text-align: center;
+            
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .category-button:hover {
+            background-color:#87cefa;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            left: 0;
+            top: 100%;
+            z-index: 8889;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            z-index: 8889;
+        }
+        .dropdown-content a:hover {
+            background-color:#87cefa;
+            z-index: 8889;
+        }
+        .nested-dropdown-content {
+            display: none;
+            background-color:White;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+            z-index: 9999;
+        }
+        .show {
+            display: block;
+        }
+
+
+                @keyframes slideInTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h1 {
+            animation: slideInTop 1s ease-out;
+            color: #333;
+        }
+         h2 {
+            animation: slideInTop 1s ease-out;
+            color: #333;
+        }
+     
+    </style>
+</head>
+<body>
+<header>
+    <div class="social-icons">
+        <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="icon pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+   
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <a href="tel:+919015509974">+91 9015509974 (Call)</a>
+            <a href="mailto:salonik1005@gmail.com">salonik1005@gmail.com</a>
+            <a href="https://wa.me/918920436425">+91 8920436425 (WhatsApp)</a>
+        </div>
+    </div>
+    
+    <!-- Navigation and Logo -->
+    <div class="nav-logo-container">
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">About Us ▾</button>
+                <div class="dropdown-content">
+                    <a href="aboutabout.html">About</a>
+                    <a href="info.html">Thesis Writing</a>
+                </div>
+            </div>
+            <a href="whyus.html">Why Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services ▾</button>
+                <div class="dropdown-content">
+                    <a href="thesiswriting.html">THESIS WRITING</a>
+                    <a href="researchpaper.html">RESEARCH PAPER</a>
+                    <a href="synopsis.html">SYNOPSIS</a>
+                    <a href="dissertation.html">DISSERTATION</a>
+                    <a href="phd.html">PHD RESEARCH</a>
+                    <a href="publication.html">PUBLICATION SUPPORT</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category A ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Thesis Information ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="intro.html">1. Introduction</a>
+                            <a href="lit.html">2. Literature Review</a>
+                            <a href="metho.html">3. Research Methodology</a>
+                            <a href="data.html">4. Data Collection</a>
+                            <a href="lab.html">5. Lab Experiment</a>
+                            <a href="find.html">6. Findings</a>
+                            <a href="bib.html">7. Bibliography</a>
+                            <a href="ana.html">8. Analysis & Interpretation</a>
+                            <a href="sugg.html">9. Conclusions and Suggestions</a>
+                            <a href="APPENDIX.html">10. Appendix</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category B ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">PhD Module ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="researchtopic.html">1. RESEARCH TOPIC</a>
+                            <a href="research.html">2. RESEARCH SYNOPSIS</a>
+                            <a href="reseth.html">3. RESEARCH THESIS</a>
+                            <a href="art.html">4. ARTICLE WRITING</a>
+                            <a href="#">5. ARTICLE & PUBLICATION</a>
+                            <a href="semi.html">6. CONFERENCE & SEMINAR</a>
+                            <a href="ppt.html">7. POWERPOINT PRESENTATION</a>
+                            <a href="plag.html">8. PLAGIARISM CHECK</a>
+                            <a href="plagrisimreport.html">9. PLAGIARISM REPORT</a>
+                            <a href="print.html">10. PRINTING & BINDING</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="howwe.html">How we work</a>
+            <a href="home.html#slides">Review</a>
+            <a href="#map">Contact Us</a>
+        </div>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.dropdown-content').classList.toggle('show');
+        });
+    });
+
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    nestedDropdowns.forEach(nestedDropdown => {
+        nestedDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.nested-dropdown-content').classList.toggle('show');
+        });
+    });
+
+    document.addEventListener('click', function() {
+        const dropdownContents = document.querySelectorAll('.dropdown-content, .nested-dropdown-content');
+        dropdownContents.forEach(content => {
+            content.classList.remove('show');
+        });
+    });
+});
+</script>
+
+        <div class="header-logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+    </div>
+</header>
+
+    <div class="container">
+        <div class="content">
+            <h1 style="color:white; background-color:#1A1A6B;">Ghostwriting services - DISSERTATION</h1>
+
+        </div>
+        <div class="content">
+       <h1><u>Understanding a Dissertation: A Comprehensive Overview</h1></u>
+          <h4>A dissertation is an extensive academic document that presents the findings of original research conducted by a candidate as part of their doctoral degree requirements. It is considered one of the most significant pieces of academic writing in a scholar's career, demonstrating the ability to conduct independent research, analyze data, and contribute new knowledge to a particular field of study.</h4>
+
+         <h1><u>Purpose of a Dissertation</h1></u>
+
+         <p>The primary purpose of a dissertation is to:</li>
+
+<strong><li>Demonstrate Mastery:</strong>  A dissertation showcases the candidate's expertise in their chosen field, reflecting their ability to engage deeply with complex concepts, theories, and methodologies.</li>
+
+<strong><li>Contribute to Knowledge:</strong> A key aspect of a dissertation is its contribution to the existing body of knowledge. It aims to fill a gap in the literature, introduce new perspectives, or provide fresh insights into a specific area of study.</li>
+
+<strong><li>Develop Research Skills:</strong> The dissertation process helps candidates develop critical research skills, including problem formulation, data collection, analysis, and interpretation.</li>
+
+<strong><li>Fulfill Academic Requirements:</strong> Completing a dissertation is a requisite for obtaining a doctoral degree, demonstrating that the candidate has met the rigorous standards set by their academic institution.</li>
+ 
+<h1><u>Structure of a Dissertation</h1></u>
+
+<p>A typical dissertation is structured into several key sections, each serving a distinct purpose:</p>
+
+<strong><li>Title Page:  </strong>The title page includes the dissertation title, the candidate's name, the academic institution, department, the degree for which the dissertation is submitted, and the date of submission.</li>
+
+<strong><li>Abstract: </strong> The abstract is a brief summary of the dissertation, usually around 250-300 words. It highlights the research problem, objectives, methodology, key findings, and conclusions.</li>
+
+
+<strong><li>Acknowledgments: </strong> This optional section allows the candidate to express gratitude to those who contributed to the completion of the dissertation, including advisors, colleagues, and family.</li>
+
+
+<strong><li>Table of Contents: </strong> The table of contents lists all the chapters, sections, and sub-sections, along with their page numbers, providing a clear roadmap of the dissertation.</li>
+
+
+<strong><li>List of Figures and Tables: </strong> If the dissertation includes figures, tables, or illustrations, this section lists them with corresponding page numbers.</li>
+
+
+<strong><li>Introduction:  </strong>The introduction sets the stage for the dissertation, outlining the research problem, objectives, research questions or hypotheses, and the significance of the study. It provides a context for the research and establishes its relevance.</li>
+
+
+<strong><li>Literature Review: </strong> The literature review surveys existing research related to the dissertation topic. It identifies gaps in the literature, situates the current study within the broader academic conversation, and justifies the research approach.</li>
+
+
+<strong><li>Methodology: </strong> The methodology section details the research design, methods of data collection and analysis, and the rationale for choosing these methods. It should be thorough enough to allow replication of the study by other researchers.</li>
+
+
+<strong><li>Results or Findings:  </strong>This section presents the results of the research in a clear and systematic manner. It may include data in the form of charts, graphs, or tables, accompanied by narrative descriptions.</li>
+
+
+<strong><li>Discussion: </strong> The discussion interprets the results, linking them back to the research questions or hypotheses. It explores the implications of the findings, their significance, and how they relate to the existing literature.</li>
+
+
+<strong><li>Conclusion: </strong> The conclusion summarizes the key findings of the dissertation, their contributions to the field, and any limitations of the study. It may also suggest directions for future research.</li>
+
+
+<strong><li>References or Bibliography: </strong> This section lists all the sources cited in the dissertation, formatted according to a specific citation style (e.g., APA, MLA, Chicago).</li>
+
+
+<strong><li>Appendices: </strong> Appendices contain supplementary material that supports the main text, such as questionnaires, raw data, or additional figures.</li>
+
+<h1><u>Characteristics of a Good Dissertation</h1></u>
+
+<p>A successful dissertation should exhibit the following qualities:</p>
+ <strong><li>Originality: </strong> The dissertation must contribute new knowledge or perspectives to the field. It should not merely replicate existing studies but offer a unique approach or insight.</li>
+
+
+<strong><li>Thoroughness: </strong> The research should be comprehensive, with a well-defined scope and methodology. The candidate should demonstrate a deep understanding of the topic and engage critically with the literature.</li>
+
+
+<strong><li>Coherence: </strong> The dissertation should be logically organized, with each section building on the previous one. The arguments should be clear, and the narrative should flow smoothly.</li>
+
+
+<strong><li>Academic Rigor: </strong> The dissertation should adhere to high standards of academic research, including careful data collection, rigorous analysis, and proper citation of sources.</li>
+
+
+<strong><li>Clarity and Precision: </strong> The writing should be clear, concise, and free of ambiguity. Complex ideas should be articulated in a way that is accessible to readers within the field.</li>
+
+    
+  <h1><u>The Dissertation Process</h1></u>
+      <p>The process of writing a dissertation typically involves several stages:</p>
+
+<strong><li>Proposal Development: </strong> Before beginning the dissertation, candidates usually submit a proposal outlining their research question, objectives, methodology, and expected contributions. The proposal must be approved by the dissertation committee.</li>
+
+<strong><li>Literature Review and Research Design: </strong> The candidate conducts a thorough literature review to contextualize their research. They also finalize the research design, including data collection methods and analytical strategies.</li>
+
+<strong><li>Data Collection: </strong> Depending on the research design, data may be collected through experiments, surveys, interviews, or archival research. This stage requires careful planning and execution.</li>
+
+<strong><li>Data Analysis: </strong> The collected data is analyzed using appropriate statistical or qualitative methods. The analysis should be rigorous and align with the research objectives.</li>
+
+<strong><li>Writing the Dissertation: </strong> The candidate writes the dissertation, starting with a draft and refining it through multiple revisions. Feedback from advisors and peers is crucial at this stage.</li>
+
+<strong><li>Submission and Defense: </strong> After completing the dissertation, the candidate submits it for review and prepares for the oral defense. During the defense, the candidate presents their research and answers questions from the committee.</li>
+
+<strong><li>Revisions and Final Submission: </strong> Based on feedback from the defense, the candidate may need to make revisions before the final submission.</li>
+
+<h1><u>Conclusion</h1></u>
+<p>A dissertation is a monumental academic achievement, reflecting a candidate's ability to conduct independent research and contribute meaningfully to their field. It requires careful planning, rigorous research, and clear communication. Successfully completing a dissertation not only fulfills the requirements for a doctoral degree but also positions the candidate as an expert in their area of study.</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const aboutUsLink = document.querySelector(".header h1");
+            aboutUsLink.addEventListener("click", function() {
+                const options = document.querySelector(".options");
+                options.classList.toggle("show");
+            });
+        });
+    </script>
+<section style="background-color: #1A1A6B;">
+
+<div class="content-wrapper">
+        <div class="banner-container">
+            <div class="banner-image">
+                <img src="shcolar1.png" alt="Academic Writing Banner">
+            </div>
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="one.png" alt="Thesis Writing">
+                        </div>
+                        <h3>Thesis Writing</h3>
+                    </div>
+                    <div class="flip-card-back">
+                            <h3><a href="thesiswriting.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Comprehensive support for your thesis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="two.png" alt="Research Paper">
+                        </div>
+                        <h3>Research Paper</h3>
+                    </div>
+                    <div class="flip-card-back">
+                         <h3><a href="researchpaper.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Detailed research paper assistance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="three.png" alt="Synopsis">
+                        </div>
+                        <h3>Synopsis</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3><a href="synopsis.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Expert synopsis writing services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="four.png" alt="Dissertation">
+                        </div>
+                        <h3>Dissertation</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3><a href="dissertation.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Dissertation writing with precision.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="five.png" alt="PhD Research">
+                        </div>
+                        <h3>PhD Research</h3>
+                    </div>
+                    <div class="flip-card-back">
+                         <h3><a href="phd.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Advanced PhD research guidance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="flip-card-image">
+                            <img src="six.png" alt="Publication Support">
+                        </div>
+                        <h3>Publication Support</h3>
+                    </div>
+                    <div class="flip-card-back">
+                         <h3><a href="publications.html" style="color:white;"><strong>Click Here</strong></a></h3>
+                        <p>Expert assistance for your publications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <div class="services-container">
+              <div class="service-item">
+            <img src="icon1.png" alt="24/7 Support">
+            <p>24/7 Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon2.png" alt="Professional Academic Writing">
+            <p>Professional Academic Writing</p>
+        </div>
+        <div class="service-item">
+            <img src="icon3.png" alt="Data Analysis Using SPSS, AMOS, STATA">
+            <p>Data Analysis Using SPSS, AMOS, STATA</p>
+        </div>
+        <div class="service-item">
+            <img src="icon4.png" alt="On-Time Work Delivery">
+            <p>On-Time Work Delivery</p>
+        </div>
+        <div class="service-item">
+            <img src="icon5.png" alt="Plagiarism Free">
+            <p>Plagiarism Free</p>
+        </div>
+        <div class="service-item">
+            <img src="icon6.png" alt="Publication Support">
+            <p>Publication Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon7.png" alt="Access to Conference/Seminars">
+            <p>Access to Conference/Seminars</p>
+        </div>
+        <div class="service-item">
+            <img src="icon8.png" alt="Printing & Binding">
+            <p>Printing & Binding</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h3>Ghostwritingservices.in</h3>
+            <p>Our dedication and efforts have resulted in tremendous accomplishments and every single achievement of our candidates motivates us to bring even more perfection to our services. We feel so honored as our candidates have been earning a plenty of benefits right after the completion of their education. The benefits are multiples such as social benefits.</p>
+        </div>
+        <div>
+            <h3>LINKS</h3>
+            <a href="aboutabout.html" class="main-option">> About Us</a>
+            <a href="howwe.html" class="main-option">> How We Work</a>
+            <a href="lit.html"class="main-option">> Literature Review</a>
+            <a href="research.html"class="main-option">> Research Synopsis</a>
+            <a href="reseth.html"class="main-option">> Research Thesis</a>
+            <a href="#">Publication</a>
+            <a href="plag.html" class="main-option">> Plagiarism Check</a>
+        </div>
+        <div>
+            <h3>CONTACT US</h3>
+            <p> > 412, 4th Floor, D Mall, Sector 10, Rohini, Delhi, 110085</p>
+            <p> > Email: contact@thesiswriting.in</p>
+            <p> > Phone: +91 828 7801 801</p>
+        </div>
+        <div class="map">
+        <div id="map">
+            <h3>MAP</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1758301930844!2d77.5945623141368!3d12.97159859085756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670a8b6f401%3A0xf9b5bdba5d9cfb4d!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1693949482537!5m2!1sen!2sus" allowfullscreen=""></iframe>
+        </div>
+</div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Ghostwritingservices.in | All Rights reserved</p>
+    </div>
+
+</body>
+</html>
