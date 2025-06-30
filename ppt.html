@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOSTWRITING SERVICES</title>
+             <link rel="stylesheet" type="text/css" href="stylee.css"> 
+        <link rel="stylesheet" type="text/css" href="temp.css"> 
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f8ff;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns:no repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            border-bottom: 2px solid #1e90ff;
+            border-top: 2px solid #1e90ff;
+        }
+        /* Styles for the social media sidebar */
+        .social-icons {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index:1000;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .youtube { background-color: #ff0000; }
+        .instagram { background-color: #c32aa3; }
+        .linkedin { background-color: #0077b5; }
+        .pinterest { background-color: #bd081c; }
+.nav-logo-container {
+    background-color: #1A1A6B; /* Replace with your desired background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav a, .nav .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav a:hover, .nav .dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    max-height: 80px; /* Increased from 50px to 80px. Adjust this value as needed */
+    width: auto;
+}
+
+.category-buttons {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 0px;
+        }
+        .category-button {
+            width: 45%;
+            height: 50px;
+            background-color:#1A1A6B;
+            color: white;
+            font-size: 16px;
+            
+            text-align: center;
+            
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .category-button:hover {
+            background-color:#87cefa;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            left: 0;
+            top: 100%;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color:#87cefa;
+        }
+        .nested-dropdown-content {
+            display: none;
+            background-color:White;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .show {
+            display: block;
+        }
+
+        .content {
+            flex: 1;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 20px;
+            vertical-align: top;
+            border-bottom: 3px solid #1e90ff;
+        }
+
+        h1,h2{
+            text-align: center;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        h1,h2,h3{
+            animation: slideIn 1s ease-out;
+        }
+              img.icon {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px; /* Smaller size */
+        }
+
+.icona {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+}
+
+        .large-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="social-icons">
+        <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="icon pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+   
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <a href="tel:+919015509974">+91 9015509974 (Call)</a>
+            <a href="mailto:salonik1005@gmail.com">salonik1005@gmail.com</a>
+            <a href="https://wa.me/918920436425">+91 8920436425 (WhatsApp)</a>
+        </div>
+    </div>
+    
+    <!-- Navigation and Logo -->
+    <div class="nav-logo-container">
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">About Us ▾</button>
+                <div class="dropdown-content">
+                    <a href="aboutabout.html">About</a>
+                    <a href="info.html">Thesis Writing</a>
+                </div>
+            </div>
+            <a href="whyus.html">Why Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services ▾</button>
+                <div class="dropdown-content">
+                    <a href="thesiswriting.html">THESIS WRITING</a>
+                    <a href="researchpaper.html">RESEARCH PAPER</a>
+                    <a href="synopsis.html">SYNOPSIS</a>
+                    <a href="dissertation.html">DISSERTATION</a>
+                    <a href="phd.html">PHD RESEARCH</a>
+                    <a href="info.html">PUBLICATION SUPPORT</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category A ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Thesis Information ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="intro.html">1. Introduction</a>
+                            <a href="lit.html">2. Literature Review</a>
+                            <a href="metho.html">3. Research Methodology</a>
+                            <a href="data.html">4. Data Collection</a>
+                            <a href="lab.html">5. Lab Experiment</a>
+                            <a href="find.html">6. Findings</a>
+                            <a href="bib.html">7. Bibliography</a>
+                            <a href="ana.html">8. Analysis & Interpretation</a>
+                            <a href="sugg.html">9. Conclusions and Suggestions</a>
+                            <a href="APPENDIX.html">10. Appendix</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category B ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">PhD Module ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="researchtopic.html">1. RESEARCH TOPIC</a>
+                            <a href="research.html">2. RESEARCH SYNOPSIS</a>
+                            <a href="reseth.html">3. RESEARCH THESIS</a>
+                            <a href="art.html">4. ARTICLE WRITING</a>
+                            <a href="#">5. ARTICLE & PUBLICATION</a>
+                            <a href="semi.html">6. CONFERENCE & SEMINAR</a>
+                            <a href="ppt.html">7. POWERPOINT PRESENTATION</a>
+                            <a href="plag.html">8. PLAGIARISM CHECK</a>
+                            <a href="plagrisimreport.html">9. PLAGIARISM REPORT</a>
+                            <a href="print.html">10. PRINTING & BINDING</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="howwe.html">How we work</a>
+            <a href="home.html#slides">Review</a>
+            <a href="#map">Contact Us</a>
+        </div>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.dropdown-content').classList.toggle('show');
+        });
+    });
+
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    nestedDropdowns.forEach(nestedDropdown => {
+        nestedDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.nested-dropdown-content').classList.toggle('show');
+        });
+    });
+
+    document.addEventListener('click', function() {
+        const dropdownContents = document.querySelectorAll('.dropdown-content, .nested-dropdown-content');
+        dropdownContents.forEach(content => {
+            content.classList.remove('show');
+        });
+    });
+});
+</script>
+
+        <div class="header-logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+    </div>
+</header>
+<div class="main-content-wrapper">
+<main>
+        <div class="content">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h1><strong>Ghostwritingservices.in </strong></h1>
+                        <h2><u>POWER POINT PRESENTATION (PPT)</u></h2>
+                        <p style="text-align:center;"><strong>We are a team of seasoned professionals with specialized expertise in providing comprehensive support to scholars at every stage of their academic journey..</strong></p>
+                        <img src="ppt.png" alt="RESEARCH TOPIC" class="icona">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <u><h2><strong>Thesis Defense Presentation</u></strong></h2></u>
+                        <p>The thesis defense presentation is your first chance to showcase your work. It should be approximately 30 minutes long, focusing primarily on your findings and recommendations. A typical outline for your presentation might be as follows: <i>Goals/Objectives of the Research (2 minutes), Literature Review/Theoretical Framework (5 minutes), Methodology (5 minutes), Findings (10 minutes), and Recommendations (5 minutes).</i></p>
+                    </td>
+                    <td>
+                        <h2><strong><u>Development of the Slides</u></strong></h2>
+                        <p>The information you include in your slides should help guide the flow of your presentation. Your slides are meant to provide an outline of your talking points and should not contain your presentation verbatim. Instead, use short, concise summary statements to make a strong impact on your audience.
+Include only key words or phrases on your slides to keep your audience's focus on you rather than the slides themselves. Incorporating diagrams, pictures, graphs, and charts can be especially helpful during your thesis defense, as they allow you to convey key information in a visually engaging way..</p>
+            
+                    </td>
+                </tr>
+              </table>
+<h1>A PowerPoint presentation gives you the opportunity to effectively present your research</h1>
+<p style="text-align:center;"><strong>Practicing will increase your familiarity with the slides and speaker notes, help you time each part of your presentation, and keep you within the suggested presentation time limit.<strong></p>
+            <img src="ppt1.png" alt="Large Image" class="large-image">
+            
+        </div>
+    </div>
+</main>
+    <div class="services-container">
+              <div class="service-item">
+            <img src="icon1.png" alt="24/7 Support">
+            <p>24/7 Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon2.png" alt="Professional Academic Writing">
+            <p>Professional Academic Writing</p>
+        </div>
+        <div class="service-item">
+            <img src="icon3.png" alt="Data Analysis Using SPSS, AMOS, STATA">
+            <p>Data Analysis Using SPSS, AMOS, STATA</p>
+        </div>
+        <div class="service-item">
+            <img src="icon4.png" alt="On-Time Work Delivery">
+            <p>On-Time Work Delivery</p>
+        </div>
+        <div class="service-item">
+            <img src="icon5.png" alt="Plagiarism Free">
+            <p>Plagiarism Free</p>
+        </div>
+        <div class="service-item">
+            <img src="icon6.png" alt="Publication Support">
+            <p>Publication Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon7.png" alt="Access to Conference/Seminars">
+            <p>Access to Conference/Seminars</p>
+        </div>
+        <div class="service-item">
+            <img src="icon8.png" alt="Printing & Binding">
+            <p>Printing & Binding</p>
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><img src="face.jpeg" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="you.jpeg" alt="YouTube"></a>
+            <a href="#"><img src="insta.jpeg" alt="Instagram"></a>
+            <a href="#"><img src="link.jpeg" alt="LinkedIn"></a>
+            <a href="#"><img src="pin.png" alt="Pinterest"></a>
+        </div>
+        <div>
+            <h3>Ghostwritingservices.in</h3>
+            <p>Our dedication and efforts have resulted in tremendous accomplishments and every single achievement of our candidates motivates us to bring even more perfection to our services. We feel so honored as our candidates have been earning a plenty of benefits right after the completion of their education. The benefits are multiples such as social benefits.</p>
+        </div>
+        <div>
+            <h3>LINKS</h3>
+            <a href="aboutabout.html" class="main-option">About Us</a>
+            <a href="howwe.html" class="main-option">How We Work</a>
+            <a href="lit.html"class="main-option">Literature Review</a>
+            <a href="research.html"class="main-option">Research Synopsis</a>
+            <a href="reseth.html"class="main-option">Research Thesis</a>
+            <a href="#">Publication</a>
+            <a href="plag.html" class="main-option">Plagiarism Check</a>
+        </div>
+        <div>
+            <h3>CONTACT US</h3>
+            <p>412, 4th Floor, D Mall, Sector 10, Rohini, Delhi, 110085</p>
+            <p>Email: contact@thesiswriting.in</p>
+            <p>Phone: +91 828 7801 801</p>
+        </div>
+        <div class="map">
+        <div id="map">
+            <h3>MAP</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1758301930844!2d77.5945623141368!3d12.97159859085756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670a8b6f401%3A0xf9b5bdba5d9cfb4d!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1693949482537!5m2!1sen!2sus" allowfullscreen=""></iframe>
+        </div>
+</div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Ghostwritingservices.in | All Rights reserved</p>
+    </div>
+
+    <script>
+        // Existing scripts remain the same
+
+        // Welcome page animation
+        setTimeout(function() {
+            document.querySelector('.welcome').classList.add('animate');
+            setTimeout(function() {
+                document.querySelector('.welcome-container').style.display = 'none';
+            }, 3000);
+        }, 0);
+    </script>
+</body>
+</html>
