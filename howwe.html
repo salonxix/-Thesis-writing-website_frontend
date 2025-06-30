@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Writing Services</title>
+                   <link rel="stylesheet" type="text/css" href="stylee.css"> 
+        <link rel="stylesheet" type="text/css" href="temp.css"> 
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding:0px;
+        }
+        .header {
+            background-color:#1A1A6B;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            z-index:999;
+        }
+        .container {
+            padding: 20px;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .flex-item {
+            width: 48%;
+        }
+
+        h1 {  
+            
+            color:black;
+            border-bottom: 2px soldi #ff6600;
+            padding-bottom: 10px;
+            text-align:center;
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          } 
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+            text-align:center;
+        }
+         @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+          nav {
+                position: static;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+        }
+
+        section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            font-size:20px;
+        }
+        section-img{
+             margin:0px;
+             padding:0px;
+        }       
+         nav {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        nav a {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            border-bottom: 2px soldi #ff6600;
+            border-top: 2px soldi #ff6600;
+        }
+      @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        h1 {
+            animation: slideIn 1s ease-out;
+            color: #333;
+        }
+       h2 {
+         animation: slideIn 1s ease-out;
+            color: #333;
+      }
+      @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        h1 {
+            animation: slideIn 1s ease-out;
+            color: #333;
+        }
+       h2 {
+         animation: slideIn 1s ease-out;
+            color: #333;
+      }
+
+
+ /* Styles for the social media sidebar */
+        .social-icons {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index:1000;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .youtube { background-color: #ff0000; }
+        .instagram { background-color: #c32aa3; }
+        .linkedin { background-color: #0077b5; }
+        .pinterest { background-color: #bd081c; }
+.nav-logo-container {
+    background-color: #1A1A6B; /* Replace with your desired background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav a, .nav .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav a:hover, .nav .dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    max-height: 80px; /* Increased from 50px to 80px. Adjust this value as needed */
+    width: auto;
+}
+
+.category-buttons {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 0px;
+        }
+        .category-button {
+            width: 45%;
+            height: 50px;
+            background-color:#1A1A6B;
+            color: white;
+            font-size: 16px;
+            
+            text-align: center;
+            
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .category-button:hover {
+            background-color:#87cefa;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            left: 0;
+            top: 100%;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color:#87cefa;
+        }
+        .nested-dropdown-content {
+            display: none;
+            background-color:White;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="social-icons">
+        <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="icon pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+   
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <a href="tel:+919015509974">+91 9015509974 (Call)</a>
+            <a href="mailto:salonik1005@gmail.com">salonik1005@gmail.com</a>
+            <a href="https://wa.me/918920436425">+91 8920436425 (WhatsApp)</a>
+        </div>
+    </div>
+    
+    <!-- Navigation and Logo -->
+    <div class="nav-logo-container">
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">About Us ▾</button>
+                <div class="dropdown-content">
+                    <a href="aboutabout.html">About</a>
+                    <a href="info.html">Thesis Writing</a>
+                </div>
+            </div>
+            <a href="whyus.html">Why Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">Services ▾</button>
+                <div class="dropdown-content">
+                    <a href="thesiswriting.html">THESIS WRITING</a>
+                    <a href="researchpaper.html">RESEARCH PAPER</a>
+                    <a href="synopsis.html">SYNOPSIS</a>
+                    <a href="dissertation.html">DISSERTATION</a>
+                    <a href="phd.html">PHD RESEARCH</a>
+                    <a href="info.html">PUBLICATION SUPPORT</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category A ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">Thesis Information ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="intro.html">1. Introduction</a>
+                            <a href="lit.html">2. Literature Review</a>
+                            <a href="metho.html">3. Research Methodology</a>
+                            <a href="data.html">4. Data Collection</a>
+                            <a href="lab.html">5. Lab Experiment</a>
+                            <a href="find.html">6. Findings</a>
+                            <a href="bib.html">7. Bibliography</a>
+                            <a href="ana.html">8. Analysis & Interpretation</a>
+                            <a href="sugg.html">9. Conclusions and Suggestions</a>
+                            <a href="APPENDIX.html">10. Appendix</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Category B ▾</button>
+                <div class="dropdown-content">
+                    <div class="nested-dropdown">
+                        <a href="#">PhD Module ▾</a>
+                        <div class="nested-dropdown-content">
+                            <a href="researchtopic.html">1. RESEARCH TOPIC</a>
+                            <a href="research.html">2. RESEARCH SYNOPSIS</a>
+                            <a href="reseth.html">3. RESEARCH THESIS</a>
+                            <a href="art.html">4. ARTICLE WRITING</a>
+                            <a href="#">5. ARTICLE & PUBLICATION</a>
+                            <a href="semi.html">6. CONFERENCE & SEMINAR</a>
+                            <a href="ppt.html">7. POWERPOINT PRESENTATION</a>
+                            <a href="plag.html">8. PLAGIARISM CHECK</a>
+                            <a href="plagrisimreport.html">9. PLAGIARISM REPORT</a>
+                            <a href="print.html">10. PRINTING & BINDING</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="howwe.html">How we work</a>
+            <a href="home.html#slides">Review</a>
+            <a href="#map">Contact Us</a>
+        </div>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.dropdown-content').classList.toggle('show');
+        });
+    });
+
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    nestedDropdowns.forEach(nestedDropdown => {
+        nestedDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.querySelector('.nested-dropdown-content').classList.toggle('show');
+        });
+    });
+
+    document.addEventListener('click', function() {
+        const dropdownContents = document.querySelectorAll('.dropdown-content, .nested-dropdown-content');
+        dropdownContents.forEach(content => {
+            content.classList.remove('show');
+        });
+    });
+});
+</script>
+
+        <div class="header-logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+    </div>
+</header>
+    <div class="content">
+        <h1>Essential Elements for Effective Execution</h1>
+        <p style="text-align:center;"><strong>The first stage of our process employs the "You Communicate, We Communicate" technique.</strong></p>
+    </div>
+<section>
+    <div class="container">
+        <div class="flex-container">
+            <div class="flex-item">
+                <p>At Thesiswriting.in, we strive to overcome challenges and exceed expectations in supporting aspiring scholars. Our mission is to assist these scholars until they are fully confident that their research work meets the highest standards, particularly in terms of being 100% free from plagiarism. We take pride in offering a comprehensive thesis writing service tailored specifically for PhD candidates. Our commitment is to deliver this service punctually, ensuring that every aspect of the thesis is meticulously crafted and rigorously checked for originality and academic integrity.</p>
+                <p><strong>The initial step in our working process is the "You Tell, We Tell" method.</strong></p>
+ <p>Let’s delve into the phases of our working style, designed to provide you with exceptional thesis writing services in India. Our tailored approach ensures your success, setting us apart from others in the field. Choosing us is straightforward: you can either take a risk by attempting the journey on your own or secure your success by partnering with us. Our structured process, personalized guidance, and unwavering support mean we are dedicated to helping you achieve your academic goals with confidence and excellence.</p>
+            </div>
+            <div class="flex-item">
+                <p>The first step in our working process is the "You Tell, We Tell" method. Here’s how it works: when we say "You Tell," we mean you need to provide us with detailed information about your specific needs and requirements for your thesis. This includes aspects like the scope of the project, deadlines, and any particular preferences you might have. Once we have this information, we will respond with "We Tell," where we will outline how we will proceed with the writing process. This includes detailing the expected timeline, the estimated budget, your level of involvement throughout the project, and our approach to ensuring the work is plagiarism-free.</p>
+<p>Our service is flexible and designed to cater to your unique needs. From the very beginning, you have the option to make choices at every step. You can select the most suitable writer for your project, influence the direction of your research, and shape the final details of your thesis. The assigned thesis writer will be a specialist in your field and will work closely with you throughout the entire process until your project is complete.Once the writing is finished, we offer the opportunity for additional revisions to ensure the final paper meets all your specifications and academic requirements. We are committed to delivering a thoroughly researched and expertly crafted thesis that aligns perfectly with your project's needs.</p>
+            </div>
+        </div>
+    </div>
+     <div class="section-img" >
+            <img src="howwe.png" width="1200" height="350"  alt="howwe">
+     </div>
+</section>
+    <div>
+    <section>
+    <div class="container">
+           <h1>Our process is driven by the "You Convey, We Interpret" method.</h1>
+        <div class="flex-container">
+            <div class="flex-item">
+<p>Our approach to thesis writing is both focused and specialized, designed to deliver exceptional results. At thesiswriting.in, we are committed to offering a service that stands out for its efficiency and effectiveness.</p> 
+
+<p>There are numerous reasons why thesiswriting.in is considered the top choice for thesis writing services online. Our team comprises highly experienced writers who excel in crafting and revising theses, performing rigorous plagiarism checks, and ensuring each chapter of your research is meticulously written. In addition to these core services, we offer comprehensive support and professional advice throughout the writing process. Our experts are adept at conducting thorough research based on reliable sources, organizing information systematically, and providing targeted thesis writing assistance. This specialized approach ensures that every aspect of your thesis meets the highest academic standards.</p>
+            </div>
+            <div class="flex-item">
+<p>You can talk to our thesis writers online, and we’ll give you insights what others won’t: help in choosing topics, sharing practical knowledge of our existing scholars (clients), and every single help that you could wish for.</p>
+
+<p>You will find the professional thesis writer that fits your needs. It does not matter if you need a thesis about finance, history, linguistics, marketing, or even psychology, our thesis helps experts (have worked with hundreds of PhDs decorates) who are capable of handling those topics, and many others, flawlessly. You only have to provide instructions, the deadline, and you will receive excellent thesis writing help just the way you asked for it within the estimated timeframe and budget.</p>
+</div>
+</div>
+</div>
+</section>
+    <div class="services-container">
+              <div class="service-item">
+            <img src="icon1.png" alt="24/7 Support">
+            <p>24/7 Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon2.png" alt="Professional Academic Writing">
+            <p>Professional Academic Writing</p>
+        </div>
+        <div class="service-item">
+            <img src="icon3.png" alt="Data Analysis Using SPSS, AMOS, STATA">
+            <p>Data Analysis Using SPSS, AMOS, STATA</p>
+        </div>
+        <div class="service-item">
+            <img src="icon4.png" alt="On-Time Work Delivery">
+            <p>On-Time Work Delivery</p>
+        </div>
+        <div class="service-item">
+            <img src="icon5.png" alt="Plagiarism Free">
+            <p>Plagiarism Free</p>
+        </div>
+        <div class="service-item">
+            <img src="icon6.png" alt="Publication Support">
+            <p>Publication Support</p>
+        </div>
+        <div class="service-item">
+            <img src="icon7.png" alt="Access to Conference/Seminars">
+            <p>Access to Conference/Seminars</p>
+        </div>
+        <div class="service-item">
+            <img src="icon8.png" alt="Printing & Binding">
+            <p>Printing & Binding</p>
+        </div>
+    </div>
+   <footer class="footer">
+
+        <div>
+            <h3>THESISWRITING.IN</h3>
+            <p>Our dedication and efforts have resulted in tremendous accomplishments and every single achievement of our candidates motivates us to bring even more perfection to our services. We feel so honored as our candidates have been earning a plenty of benefits right after the completion of their education. The benefits are multiples such as social benefits.</p>
+        </div>
+        <div>
+            <h3>LINKS</h3>
+            <a href="aboutabout.html" class="main-option">About Us</a>
+            <a href="howwe.html" class="main-option">How We Work</a>
+            <a href="lit.html"class="main-option">Literature Review</a>
+            <a href="research.html"class="main-option">Research Synopsis</a>
+            <a href="reseth.html"class="main-option">Research Thesis</a>
+            <a href="#">Publication</a>
+            <a href="plag.html" class="main-option">Plagiarism Check</a>
+        </div>
+        <div>
+            <h3>CONTACT US</h3>
+            <p>412, 4th Floor, D Mall, Sector 10, Rohini, Delhi, 110085</p>
+            <p>Email: contact@thesiswriting.in</p>
+            <p>Phone: +91 828 7801 801</p>
+        </div>
+        <div class="map">
+            <h3>MAP</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1758301930844!2d77.5945623141368!3d12.97159859085756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670a8b6f401%3A0xf9b5bdba5d9cfb4d!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1693949482537!5m2!1sen!2sus" allowfullscreen=""></iframe>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Ghostwritingservices.in | All Rights reserved</p>
+    </div>
+
+    <script>
+</body>
+</html>
